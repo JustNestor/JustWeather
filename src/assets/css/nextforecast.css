@@ -1,0 +1,98 @@
+.nextforecast {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: 41px;
+  right: 959px;
+  top: 412px;
+  bottom: 37px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  border-radius: 45px;
+  background: rgb(29, 28, 31);
+}
+
+.day {
+  position: relative;
+  width: 247px;
+  height: 45px;
+  left: 19px;
+  right: 14px;
+  flex: none;
+  margin-top: 5px;
+
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0);
+}
+
+.tempnext {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  left: 57px;
+  right: 155px;
+  top: 5px;
+  bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  color: rgb(255, 255, 255);
+  font-family: JetBrains Mono;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.iconfloat {
+  position: absolute;
+  width: 36.06px;
+  height: 34px;
+  left: 9px;
+  right: 201.94px;
+  top: 6px;
+  bottom: 5px;
+}
+
+.datenext {
+  position: absolute;
+  width: 70px;
+  height: 26px;
+  left: 106px;
+  right: 71px;
+  top: 10px;
+  bottom: 9px;
+
+
+  color: rgba(255, 255, 255, 0.6);
+  font-family: JetBrains Mono;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.daynext {
+  position: absolute;
+  width: 70px;
+  height: 26px;
+  left: 175px;
+  right: 20px;
+  top: 10px;
+  bottom: 9px;
+
+  color: rgba(255, 255, 255, 0.6);
+  font-family: JetBrains Mono;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+}

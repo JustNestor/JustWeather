@@ -1,0 +1,78 @@
+.hourly {
+  position: absolute;
+  width: 874px;
+  height: 177px;
+  left: 365px;
+  right: 41px;
+  top: 552px;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x: scroll;
+
+  background: rgb(19, 18, 20);
+}
+
+.hourlyweather {
+  position: relative;
+  width: 120px;
+  height: 146px;
+  margin-right: 10px;
+  flex: none;
+
+  border-radius: 20px;
+  background: rgb(29, 28, 31);
+}
+
+
+.timehourly {
+  position: relative;
+  width: 55px;
+  height: 13px;
+  left: 35px;
+  right: 34px;
+  top: 106px;
+  bottom: 17px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  color: rgb(255, 255, 255);
+  font-family: JetBrains Mono;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.temphourly {
+  position: relative;
+  width: 55px;
+  height: 13px;
+  left: 50px;
+  top: 13px;
+  bottom: 118px;
+  display: flex;
+  align-items: center;
+
+  color: rgb(255, 255, 255);
+  font-family: JetBrains Mono;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.hourlyicon {
+  position: absolute;
+  width: 70px;
+  height: 66px;
+  left: 27px;
+  right: 27px;
+  top: 33px;
+  bottom: 47px;
+}

@@ -1,0 +1,59 @@
+.appname, .search {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-align: left;
+  position: absolute;
+}
+
+.topbar {
+  position: absolute;
+  width: 1280px;
+  height: 65px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 664px;
+  background: rgba(255, 255, 255, 0);
+}
+
+.appname {
+  width: 227px;
+  height: 33px;
+  left: 50px;
+  right: 1003px;
+  top: 16px;
+  bottom: 16px;
+  font-size: 25px;
+  line-height: 33px;
+}
+
+.searchbar {
+  position: absolute;
+  width: 400px;
+  height: 50px;
+  left: 440px;
+  right: 440px;
+  top: 7px;
+  bottom: 8px;
+  border-radius: 45px;
+  text-align: left;
+  background: rgb(29, 28, 31);
+}
+
+.search {
+  all: unset;
+  align-items: left;
+  position: absolute;
+  width: 340px;
+  word-wrap: unset;
+  height: 31px;
+  left: 50px;
+  top: 9px;
+  bottom: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  line-height: 24px;
+}

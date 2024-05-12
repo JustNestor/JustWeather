@@ -1,0 +1,128 @@
+.nowtxt, .tempnow, .weathername {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-align: left;
+  position: absolute;
+}
+
+.datenow, .place {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: JetBrains Mono;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  position: absolute;
+}
+
+.now {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  left: 41px;
+  right: 959px;
+  top: 91px;
+  bottom: 358px;
+  border-radius: 45px;
+  background: rgb(29, 28, 31);
+}
+
+.nowtxt {
+  width: 70px;
+  height: 30px;
+  left: 25px;
+  right: 185px;
+  top: 25px;
+  bottom: 225px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.hr {
+  position: absolute;
+  width: 150px;
+  left: 59px;
+  top: 163px;
+  border: 0.1px solid rgb(255, 255, 255);
+}
+
+.weathernow {
+  position: absolute;
+  width: 205px;
+  height: 96px;
+  left: 34px;
+  right: 41px;
+  top: 55px;
+  bottom: 129px;
+  background: rgba(255, 255, 255, 0);
+}
+
+.tempnow {
+  width: 134px;
+  height: 51px;
+  left: 71px;
+  top: 10px;
+  bottom: 23px;
+  font-size: 55px;
+  line-height: 73px;
+}
+
+.weathername {
+  width: 134px;
+  height: 51px;
+  left: 69px;
+  right: 2px;
+  top: 60px;
+  z-index: 100;
+  color: rgb(255, 255, 255);
+  font-family: JetBrains Mono;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.iconnow {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 0;
+  right: 157px;
+  top: 17px;
+  bottom: 31px;
+}
+
+.destination {
+  position: absolute;
+  width: 206px;
+  height: 78px;
+  left: 33px;
+  right: 41px;
+  top: 173px;
+  bottom: 29px;
+  background: rgba(255, 255, 255, 0);
+}
+
+.datenow {
+  width: 176px;
+  height: 29px;
+  left: 30px;
+  right: 0;
+  top: 10px;
+  bottom: 39px;
+}
+
+.place {
+  width: 176px;
+  height: 29px;
+  left: 30px;
+  right: 0;
+  top: 40px;
+  bottom: 0;
+}

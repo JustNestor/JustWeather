@@ -1,0 +1,102 @@
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #396cd8;
+}
+
+button:active {
+  border-color: #396cd8;
+  background-color: #e8e8e8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'JetBrains Mono';
+  color: #EEEEEE;
+  text-align: center;
+  line-height: 27px;
+  overflow: hidden;
+}
+
+:root {
+  --primary: #B5A1E5;
+  --on-primary: #100E17;
+  --background: #131214;
+  --on-background: #EAE6F2;
+  --surface: #1D1C1F;
+  --on-surface: #DDDAE5;
+  --on-surface-variant: #7B7980;
+  --on-surface-variant-2: #B9B6BF;
+  --outline: #3E3D40;
+  --bg-aqi-1: #89E589;
+  --on-bg-aqi-1: #1F331F;
+  --bg-aqi-2: #E5DD89;
+  --on-bg-aqi-2: #33311F;
+  --bg-aqi-3: #E5C089;
+  --on-bg-aqi-3: #332B1F;
+  --bg-aqi-4: #E58989;
+  --on-bg-aqi-4: #331F1F;
+  --bg-aqi-5: #E589B7;
+  --on-bg-aqi-5: #331F29;
+  --white: hsl(0, 0%, 100%);
+  --white-alpha-4: hsla(0, 0%, 100%, 0.04);
+  --white-alpha-8: hsla(0, 0%, 100%, 0.08);
+  --black-alpha-10: hsla(0, 0%, 0%, 0.1);
+}
+
+.container {
+  position: relative;
+  width: 1280px;
+  height: 729px;
+
+  background: rgb(19, 18, 20);
+}
+
+.forecasttxt {
+  position: absolute;
+  width: 227px;
+  height: 30px;
+  left: 45px;
+  right: 1008px;
+  top: 375px;
+  bottom: 324px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.todayattxt {
+  position: absolute;
+  width: 227px;
+  height: 30px;
+  left: 373px;
+  right: 680px;
+  top: 512px;
+  bottom: 187px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-align: left;
+}
