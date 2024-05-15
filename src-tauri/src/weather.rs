@@ -1,6 +1,4 @@
-use minreq;
 use serde::{Deserialize, Serialize};
-use serde_json;
 use serde_json::Value;
 
 use chrono::prelude::*;
@@ -202,12 +200,16 @@ impl WeatherResponse {
             let sunrise = Self::unix_to_utc_time(sunrise_unix);
             let sunset = Self::unix_to_utc_time(sunset_unix);
 
+            let weather_name_english = weather_today["weather"][0]["main"]
+                                .as_str()
+                                .unwrap_or_default()
+                                .to_string();
+
+           	let weather_name = Self::translate_weather(weather_name_english);
+
             weather = WeatherNow {
                 date,
-                weather_name: weather_today["weather"][0]["main"]
-                    .as_str()
-                    .unwrap_or_default()
-                    .to_string(),
+                weather_name,
                 icon: weather_today["weather"][0]["icon"]
                     .as_str()
                     .unwrap_or_default()
@@ -284,5 +286,21 @@ impl WeatherResponse {
         let newdate = datetime.format("%H:%M").to_string();
 
         newdate
+    }
+
+    fn translate_weather(weather: String) -> String {
+    	let translations = HashMap::from([
+    		("Clear", "Ясно"),
+    		("Clouds", "Хмарно"),
+    		("Rain", "Дощ"),
+    		("Thunderstorm", "Гроза"),
+    		("Snow", "Сніг"),
+    		("Mist", "Туман")
+    	]);
+
+    	match translations.get(weather.as_str()) {
+    		Some(translation) => translation.to_string(),
+    		_ => weather,
+    	}
     }
 }

@@ -1,6 +1,4 @@
-use minreq;
 use serde::{Deserialize, Serialize};
-use serde_json;
 use serde_json::Value;
 
 #[derive(Debug, Serialize, Deserialize)]

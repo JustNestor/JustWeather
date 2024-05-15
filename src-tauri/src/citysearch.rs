@@ -1,6 +1,4 @@
-use minreq;
 use serde::{Deserialize, Serialize};
-use serde_json;
 use serde_json::Value;
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -32,18 +30,14 @@ impl CitySearch {
 
         if let Some(array) = json.as_array() {
             for city in array {
-                let mut city_country = city["country"].as_str().unwrap_or_default().to_string();
-
-                if city_country == "UA".to_owned() {
-                    city_country = "Україна".to_owned();
-                }
+                let city_country = city["country"].as_str().unwrap_or_default().to_string();
 
                 let c = City {
                     name: city["local_names"]["uk"]
                         .as_str()
-                        .unwrap_or(&city["name"].to_string())
-                        .to_string(),
-                    state: city["state"].as_str().unwrap_or_default().to_string(),
+                        .unwrap_or(&city["name"].to_string().replace('"', ""))
+                        .to_string().replace('"', ""),
+                    state: city["state"].as_str().unwrap_or_default().to_string().replace('"', ""),
                     lat: city["lat"].to_string(),
                     lon: city["lon"].to_string(),
                     country: city_country,

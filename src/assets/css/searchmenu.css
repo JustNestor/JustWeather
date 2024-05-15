@@ -56,7 +56,7 @@
 
 .city-result-name {
 	position: absolute;
-	width: 100px;
+	width: 150px;
 	height: 30px;
 	left: 75px;
 	top: 10px;
@@ -76,14 +76,10 @@
 
 .city-result-state-country {
 	position: absolute;
-	width: 300px;
 	height: 23px;
-	right: 0px;
+	right: 10px;
 	top: 19px;
 	bottom: 8px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
 
 	color: rgba(255, 255, 255, 0.6);
 	font-family: JetBrains Mono;

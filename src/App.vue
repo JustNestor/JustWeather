@@ -39,7 +39,12 @@ async function parseCity(city, event) {
   menuVisible.value = false;
   searchQuery.value = "";
 
-  countryName.value = city.country;
+  if (city.country == "UA") {
+    countryName.value = "Україна";
+  } else {
+    countryName.value = city.country;
+  }
+
   cityName.value = city.name;
 
   parseWeather(city.lat, city.lon);
