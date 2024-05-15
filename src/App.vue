@@ -18,7 +18,8 @@ const currentWeather = ref({
 });
 
 const hourlyForecast = ref({ forecast: [{ time: "HH:MM", icon: "", temp: 0.0 }] });
-const fiveDayForecast = ref({ forecast: [{ date: ["", "", "", "", ""], icon:"", temp: 0.0 }] });
+const fiveDayForecast = ref({ forecast: [{ date: ["", "", "", "", ""], icon: "", temp: 0.0 }] });
+const airPollution = ref({ pm25: "", so2: "", no2: "", o3: "", status: ""})
 
 
 
@@ -50,7 +51,9 @@ async function getAirIndex(lat, lon) {
   const json = await invoke('get_airindex', { lat, lon })
     .then((data) => JSON.parse(data.replaceAll("'", '"')));
 
-  console.log(json);
+  airPollution.value = json;
+
+  console.log(airPollution.value);
 }
 
 </script>
@@ -61,13 +64,8 @@ async function getAirIndex(lat, lon) {
     <div class="topbar">
       <span class="app-name">JustWeather</span>
       <div class="search-bar">
-        <input
-          class="search-input"
-          v-model="searchQuery"
-          v-on:keyup.enter="searchCity()"
-          placeholder="Шукати місто..."
-          type="text"
-        />
+        <input class="search-input" v-model="searchQuery" v-on:keyup.enter="searchCity()" placeholder="Шукати місто..."
+          type="text" />
         <img src="./assets/icons/search.svg" class="search-icon" />
       </div>
     </div>
@@ -75,14 +73,13 @@ async function getAirIndex(lat, lon) {
     <div class="current-weather">
       <span class="current-weather-text">Зараз</span>
       <hr class="separator" />
+
       <div class="weather-details">
         <div class="current-temp">{{ parseInt(currentWeather.temp) }}°C</div>
-        <img
-          class="current-weather-icon"
-          :src="'src/assets/weather_icons/' + currentWeather.icon + '.png'"
-        />
-        <div class="weather-description">{{ currentWeather.weatherName }}</div>
+        <img class="current-weather-icon" :src="'src/assets/weather_icons/' + currentWeather.icon + '.png'" />
+        <div class="weather-description">{{ currentWeather.weather_name }}</div>
       </div>
+
       <div class="location-details">
         <div class="current-date">
           {{ currentWeather.date[2] }} {{ currentWeather.date[0] }},
@@ -101,10 +98,7 @@ async function getAirIndex(lat, lon) {
           {{ forecast.date[0] }} {{ forecast.date[3] }}
         </div>
         <div class="forecast-day">{{ forecast.date[1] }}</div>
-        <img
-          class="forecast-icon"
-          :src="'src/assets/weather_icons/' + forecast.icon + '.png'"
-        />
+        <img class="forecast-icon" :src="'src/assets/weather_icons/' + forecast.icon + '.png'" />
       </div>
     </div>
 
@@ -112,19 +106,19 @@ async function getAirIndex(lat, lon) {
     <span class="today-at-text">Сьогодні в</span>
 
     <div class="weather-surface">
-      <span class="weather-conditions-text">Погодны умови</span>
+      <span class="weather-conditions-text">Погодні умови</span>
       <div class="weather-detail surf1">
         <span class="air-quality-index">Індекс якості повітря</span>
-        <div class="index">Добре</div>
+        <div class="index">{{ airPollution.status }}</div>
         <img src="./assets/icons/wind.svg" class="air-index-icon" />
         <span class="pm">PM25</span>
         <span class="so">SO2</span>
         <span class="no">NO2</span>
         <span class="o3">O3</span>
-        <span class="pm_ value">100</span>
-        <span class="so_ value">100</span>
-        <span class="no_ value">100</span>
-        <span class="o3_ value">100</span>
+        <span class="pm_ value">{{ airPollution.pm25 }}</span>
+        <span class="so_ value">{{ airPollution.so2 }}</span>
+        <span class="no_ value">{{ airPollution.no2 }}</span>
+        <span class="o3_ value">{{ airPollution.o3 }}</span>
       </div>
 
       <div class="weather-detail surf2">
@@ -166,10 +160,7 @@ async function getAirIndex(lat, lon) {
   <div class="hourly-forecast">
     <div v-for="hourlyForecast in hourlyForecast.forecast" class="hourly-weather">
       <div class="hourly-temp">{{ parseInt(hourlyForecast.temp) }}°</div>
-      <img
-        class="hourly-icon"
-        :src="'src/assets/weather_icons/' + hourlyForecast.icon + '.png'"
-      />
+      <img class="hourly-icon" :src="'src/assets/weather_icons/' + hourlyForecast.icon + '.png'" />
       <div class="hourly-time">{{ hourlyForecast.time }}</div>
     </div>
   </div>
