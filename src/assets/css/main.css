@@ -27,6 +27,10 @@ button:active {
   text-align: center;
   line-height: 27px;
   overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 :root {

@@ -1,9 +1,10 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
 
 
-const searchQuery = ref("Lviv");
+const searchQuery = ref();
+const menuVisible = ref(false);
 const cityName = ref("");
 const countryName = ref("");
 const currentWeather = ref({
@@ -16,24 +17,33 @@ const currentWeather = ref({
   sunrise: "HH:MM",
   sunset: "HH:MM"
 });
+const cityList = ref([{ name: "", state: "", lat: "", lob: "", country: "" }])
 
 const hourlyForecast = ref({ forecast: [{ time: "HH:MM", icon: "", temp: 0.0 }] });
 const fiveDayForecast = ref({ forecast: [{ date: ["", "", "", "", ""], icon: "", temp: 0.0 }] });
 const airPollution = ref({ pm25: "", so2: "", no2: "", o3: "", status: ""})
 
 
-
 async function searchCity() {
+  menuVisible.value = true
   const city = searchQuery.value;
 
   const json = await invoke('search_city', { name: city })
     .then((data) => JSON.parse(data.replaceAll("'", '"')).result);
 
-  countryName.value = json[0].country;
-  cityName.value = json[0].name;
+  cityList.value = json
+}
 
-  parseWeather(json[0].lat, json[0].lon);
-  getAirIndex(json[0].lat, json[0].lon);
+
+async function parseCity(city, event) {
+  menuVisible.value = false;
+  searchQuery.value = "";
+
+  countryName.value = city.country;
+  cityName.value = city.name;
+
+  parseWeather(city.lat, city.lon);
+  getAirIndex(city.lat, city.lon);
 }
 
 
@@ -52,10 +62,15 @@ async function getAirIndex(lat, lon) {
     .then((data) => JSON.parse(data.replaceAll("'", '"')));
 
   airPollution.value = json;
-
-  console.log(airPollution.value);
 }
 
+onMounted(() => {
+  invoke('search_city', { name: "Львів" })
+    .then((data) => {
+      const js = JSON.parse(data.replaceAll("'", '"')).result
+      parseCity(js[0])
+    });
+});
 </script>
 
 
@@ -64,9 +79,17 @@ async function getAirIndex(lat, lon) {
     <div class="topbar">
       <span class="app-name">JustWeather</span>
       <div class="search-bar">
-        <input class="search-input" v-model="searchQuery" v-on:keyup.enter="searchCity()" placeholder="Шукати місто..."
+        <input class="search-input" v-model="searchQuery" v-on:keyup.enter="(event) => searchCity(city, event)" placeholder="Шукати місто..."
           type="text" />
         <img src="./assets/icons/search.svg" class="search-icon" />
+      </div>
+    </div>
+
+    <div class="search-menu" :class="{active_search_menu: menuVisible}">
+      <div v-for="city in cityList" @click="parseCity(city)" class="city-result">
+        <img :src="'https://flagsapi.com/' + city.country + '/flat/64.png'" class="country-flag-icon">
+        <span class="city-result-name">{{ city.name.replaceAll('"', "") }}</span>
+        <span class="city-result-state-country">{{ city.state }}, {{city.country}}</span>
       </div>
     </div>
 
@@ -155,13 +178,15 @@ async function getAirIndex(lat, lon) {
         <img src="./assets/icons/temp.svg" class="temp-icon" />
       </div>
     </div>
-  </div>
 
-  <div class="hourly-forecast">
-    <div v-for="hourlyForecast in hourlyForecast.forecast" class="hourly-weather">
-      <div class="hourly-temp">{{ parseInt(hourlyForecast.temp) }}°</div>
-      <img class="hourly-icon" :src="'src/assets/weather_icons/' + hourlyForecast.icon + '.png'" />
-      <div class="hourly-time">{{ hourlyForecast.time }}</div>
+    <div class="hourly-forecast">
+      <div v-for="hourlyForecast in hourlyForecast.forecast" class="hourly-weather">
+        <div class="hourly-temp">{{ parseInt(hourlyForecast.temp) }}°</div>
+        <img class="hourly-icon" :src="'src/assets/weather_icons/' + hourlyForecast.icon + '.png'" />
+        <div class="hourly-time">{{ hourlyForecast.time }}</div>
+      </div>
     </div>
   </div>
+
+  
 </template>
