@@ -1,4 +1,4 @@
-.appname, .search {
+.app-name, .search-input {
   display: flex;
   flex-direction: row;
   text-align: left;
@@ -8,7 +8,7 @@
   position: absolute;
 }
 
-.topbar {
+.top-bar {
   position: absolute;
   width: 1280px;
   height: 65px;
@@ -19,7 +19,7 @@
   background: rgba(255, 255, 255, 0);
 }
 
-.appname {
+.app-name {
   width: 227px;
   height: 33px;
   left: 50px;
@@ -30,7 +30,7 @@
   line-height: 33px;
 }
 
-.searchbar {
+.search-bar {
   position: absolute;
   width: 400px;
   height: 50px;
@@ -43,7 +43,7 @@
   background: rgb(29, 28, 31);
 }
 
-.search {
+.search-input {
   all: unset;
   align-items: left;
   position: absolute;
@@ -56,4 +56,29 @@
   color: rgba(255, 255, 255, 0.5);
   font-size: 18px;
   line-height: 24px;
+}
+
+.search-icon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 3%;
+  top: 20%;
+  border-radius: 50%;
+}
+
+.calendar-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 5.33px;
+  top: 14.67px;
+}
+
+.location-icon {
+  position: absolute;
+  width: 17.72px;
+  height: 21.53px;
+  left: 5.33px;
+  top: 43px;
 }

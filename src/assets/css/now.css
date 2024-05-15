@@ -1,4 +1,4 @@
-.nowtxt, .tempnow, .weathername {
+.current-weather-text, .current-temp, .weather-description {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -8,7 +8,7 @@
   position: absolute;
 }
 
-.datenow, .place {
+.current-date, .location {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -22,7 +22,7 @@
   position: absolute;
 }
 
-.now {
+.current-weather {
   position: absolute;
   width: 280px;
   height: 280px;
@@ -34,7 +34,7 @@
   background: rgb(29, 28, 31);
 }
 
-.nowtxt {
+.current-weather-text {
   width: 70px;
   height: 30px;
   left: 25px;
@@ -46,7 +46,7 @@
   text-align: center;
 }
 
-.hr {
+.separator {
   position: absolute;
   width: 150px;
   left: 59px;
@@ -54,7 +54,7 @@
   border: 0.1px solid rgb(255, 255, 255);
 }
 
-.weathernow {
+.weather-details {
   position: absolute;
   width: 205px;
   height: 96px;
@@ -65,7 +65,7 @@
   background: rgba(255, 255, 255, 0);
 }
 
-.tempnow {
+.current-temp {
   width: 134px;
   height: 51px;
   left: 71px;
@@ -75,7 +75,7 @@
   line-height: 73px;
 }
 
-.weathername {
+.weather-description {
   width: 134px;
   height: 51px;
   left: 69px;
@@ -88,7 +88,7 @@
   line-height: 24px;
 }
 
-.iconnow {
+.current-weather-icon {
   position: absolute;
   width: 48px;
   height: 48px;
@@ -98,7 +98,7 @@
   bottom: 31px;
 }
 
-.destination {
+.location-details {
   position: absolute;
   width: 206px;
   height: 78px;
@@ -109,7 +109,7 @@
   background: rgba(255, 255, 255, 0);
 }
 
-.datenow {
+.current-date {
   width: 176px;
   height: 29px;
   left: 30px;
@@ -118,7 +118,7 @@
   bottom: 39px;
 }
 
-.place {
+.location {
   width: 176px;
   height: 29px;
   left: 30px;

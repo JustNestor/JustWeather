@@ -1,4 +1,4 @@
-.hourly {
+.hourly-forecast {
   position: absolute;
   width: 874px;
   height: 177px;
@@ -15,7 +15,7 @@
   background: rgb(19, 18, 20);
 }
 
-.hourlyweather {
+.hourly-weather {
   position: relative;
   width: 120px;
   height: 146px;
@@ -27,7 +27,7 @@
 }
 
 
-.timehourly {
+.hourly-time {
   position: relative;
   width: 55px;
   height: 13px;
@@ -48,7 +48,7 @@
   text-align: center;
 }
 
-.temphourly {
+.hourly-temp {
   position: relative;
   width: 55px;
   height: 13px;
@@ -67,7 +67,7 @@
   text-align: center;
 }
 
-.hourlyicon {
+.hourly-icon {
   position: absolute;
   width: 70px;
   height: 66px;

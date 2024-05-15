@@ -63,7 +63,7 @@ button:active {
   background: rgb(19, 18, 20);
 }
 
-.forecasttxt {
+.forecast-text {
   position: absolute;
   width: 227px;
   height: 30px;
@@ -82,7 +82,7 @@ button:active {
   text-align: left;
 }
 
-.todayattxt {
+.today-at-text {
   position: absolute;
   width: 227px;
   height: 30px;
