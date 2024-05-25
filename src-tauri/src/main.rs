@@ -6,7 +6,7 @@ mod airindex;
 mod citysearch;
 mod weather;
 
-const API_KEY: &str = "21813acf1347c5dab9268421b7709117";
+const API_KEY: &str = "" // https://openweathermap.org/api;
 
 #[tauri::command]
 fn search_city(name: &str) -> String {
