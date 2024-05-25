@@ -23,8 +23,6 @@ fn get_weather(lat: String, lon: String) -> String {
     let response = weather::WeatherResponse::get_response(API_KEY, lat, lon);
     let json: String = serde_json::to_string(&response).unwrap().replace('\"', "'");
 
-    println!("{:?}", json);
-
     json
 }
 
@@ -32,8 +30,6 @@ fn get_weather(lat: String, lon: String) -> String {
 fn get_airindex(lat: String, lon: String) -> String {
     let response = airindex::AirIndex::get_airindex(API_KEY, lat, lon);
     let json: String = serde_json::to_string(&response).unwrap().replace('\"', "'");
-
-    println!("{:?}", json);
 
     json
 }
