@@ -13,8 +13,6 @@ fn search_city(name: &str) -> String {
     let response = citysearch::CitySearch::search(API_KEY, name);
     let json: String = serde_json::to_string(&response).unwrap().replace('\"', "'");
 
-    println!("{:?}", json);
-
     json
 }
 
