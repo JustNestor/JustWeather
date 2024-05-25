@@ -1,7 +1,8 @@
-# Tauri + Vue 3
+# JustWeatherApp
 
-This template should help get you started developing with Tauri + Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Rust програма для перегляду погоди.
 
-## Recommended IDE Setup
+![screen-1716631271](https://github.com/JustNestor/JustWeather/assets/144473559/cb73f45d-5fad-4526-b393-3ddc8e44e414)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+Оригінальний дизайн: https://youtu.be/QMwyNnjAils?si=sWXU_YtxgcCEtKeL
+
